@@ -81,7 +81,7 @@ public class Main extends ListenerAdapter {
                             if (ch != null) {
                                 ch.sendMessage(message).queue();
                             } else {
-                                ScheduledFuture<?> thisTask = tasks.get(id);
+                                ScheduledFuture<?> thisTask = tasks.remove(id);
                                 if (thisTask != null) {
                                     thisTask.cancel(false);
                                     channels.remove(id);
